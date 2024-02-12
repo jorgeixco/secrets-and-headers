@@ -43,7 +43,7 @@ ${values.acount}:
 CALLBACK-URL-${country}-${values.acount}-${values.channel} = 
 ${values.callback.trim()}
 
-BACKPAGE-URL-${country}-${values.acount}-${values.channel} = 
+BACK-PAGE-URL-${country}-${values.acount}-${values.channel} = 
 ${values.callback.trim()}
 
 URL-WEBHOOK-${country}-${values.acount}-${values.channel} = 
