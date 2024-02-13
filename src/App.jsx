@@ -9,7 +9,7 @@ function App() {
     acount: '',
     callback: '',
     // Eliminado el estado de country, ya que se derivará automáticamente
-    channel: '',
+    commerce: '',
     webhook: '',
   });
 
@@ -40,20 +40,20 @@ function App() {
     setSecrets(`
 ${values.acount}:
 
-CALLBACK-URL-${country}-${values.acount}-${values.channel} = 
+CALLBACK-URL-${country}-${values.acount}-${values.commerce} = 
 ${values.callback.trim()}
 
-BACK-PAGE-URL-${country}-${values.acount}-${values.channel} = 
+BACK-PAGE-URL-${country}-${values.acount}-${values.commerce} = 
 ${values.callback.trim()}
 
-URL-WEBHOOK-${country}-${values.acount}-${values.channel} = 
+URL-WEBHOOK-${country}-${values.acount}-${values.commerce} = 
 ${values.webhook.trim()}
     `.trim());
     setHeader(`
 "headers":{
   "x-country": "${country.trim()}",
   "x-customerid": "${values.acount.trim()}",
-  "x-commerce": "${values.channel.trim()}",
+  "x-commerce": "${values.commerce.trim()}",
   "x-api-version": 1,
   "x-channel": "${values.acount.trim().slice(-5)}",
 }
@@ -67,10 +67,10 @@ ${values.webhook.trim()}
           <p>ACOUNT</p>
         </label>
         <input type="text" name="acount" placeholder="ACOUNT" onChange={handleChange} required/>
-        <label htmlFor="CHANNEL">
-          <p>CHANNEL</p>
+        <label htmlFor="COMMERCE">
+          <p>COMMERCE</p>
         </label>
-        <input type="text" name="channel" placeholder="CHANNEL" onChange={handleChange} required/>
+        <input type="text" name="commerce" placeholder="COMMERCE" onChange={handleChange} required/>
         <label htmlFor="CALLBACK">
           <p>CALLBACK</p>
         </label>
@@ -99,5 +99,6 @@ ${values.webhook.trim()}
     </div>
   );
 }
+
 
 export default App;
